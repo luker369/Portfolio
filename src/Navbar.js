@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-scroll';
+
+
 // import Resume from '../assets/Resume.pdf';
 
 
@@ -39,15 +40,27 @@ const StyledNavbar = styled.div`
 .logo-img {
   height: auto;
   width: 2.5em;
+	margin-left: 2.5em;
+	filter: invert(1);
 }
+@media (max-width: 700px){
+	.logo-img {
+		margin-left: 0em;
+		filter: invert(1);
+	}
+}
+
 .coolLists {
   cursor: pointer;
   color: rgb(148, 163, 184);
+	padding-right: 4em;
 }
 .coolLists:hover{
   color: #00df9a;
   transform: scale(1.02);
 }
+
+
 `;
 
 const Navbar = () => {
@@ -60,35 +73,25 @@ const Navbar = () => {
     <StyledNavbar>
       <div className="flex justify-between items-center h-24 max-w mx-auto px-4 text-slate-400">
 			<img
-				className="logo-img w-full text-3xl font-bold text-[#00df9a] m-4 w-10 h-10 border-2 border-emerald-400 rounded-full"
-				src="https://i.etsystatic.com/22316940/r/il/639578/3090313044/il_1588xN.3090313044_5knq.jpg"
+				className="logo-img w-full text-3xl font-bold text-[#00df9a] m-4 w-10 h-10 rounded-full"
+				src="https://i.imgur.com/JCKUAJ7.png" alt="LS logo"
 			/>
 			<ul className="hidden md:flex ">
-				<li className="p-1 px-4 coolLists">
-					<Link to="about" smooth={true} duration={500}>
-						About
-					</Link>
-				</li>
-				<li className="p-1 px-4 coolLists">
-					<Link to="experience" smooth={true} duration={500}>
-						Experience
-					</Link>
-				</li>
-				<li className="p-1 px-4 coolLists">
-					<Link to="projects" smooth={true} duration={500}>
-						Projects
-					</Link>
-				</li>
-				<li className="p-1 px-4 coolLists">
-					<Link to="contact" smooth={true} duration={500}>
-						Contact
-					</Link>
-				</li>
-				<button className="px-2 mr-12 rounded border-2 bg-slate-800 border-emerald-400 hover:bg-emerald-900  text-emerald-400">
-					<a href="#" target="_blank" rel="noreferrer">
+				<li className="p-1 px-4 coolLists my-work-nav-link">
+					<a href="https://docs.google.com/document/d/1z5v6jSCvMw11KNfH1Jv5EAknBIWan9GAxmYeYBHRe74/edit?usp=sharing">
 						Resume
 					</a>
-				</button>
+				</li>
+				<li className="p-1 px-4 coolLists about-nav-link">
+					<a href="#about">
+						About
+					</a>
+				</li>
+				<li className="p-1 px-4 coolLists">
+					<a href="#contact">
+						Contact
+					</a>
+				</li>
 			</ul>
 
 			{/* Mobile Menu */}
@@ -111,30 +114,25 @@ const Navbar = () => {
 				/> */}
 
 				<li className="p-4 border-b border-slate-600 coolLists">
-					<Link onClick={handleClick} to="about" smooth={true} duration={500}>
-						About
-					</Link>
-				</li>
-				<li className="p-4 border-b border-slate-600 coolLists">
-					<Link onClick={handleClick} to="experience" smooth={true} duration={500}>
-						Experience
-					</Link>
-				</li>
-				<li className="p-4 border-b border-slate-600 coolLists">
-					<Link onClick={handleClick} to="projects" smooth={true} duration={500}>
-						Projects
-					</Link>
-				</li>
-				<li className="p-4 border-b border-slate-600 coolLists">
-					<Link onClick={handleClick} to="contact" smooth={true} duration={500}>
-						Contact
-					</Link>
-				</li>
-				<button className="p-2 mt-4 ml-3 rounded border-2 border-emerald-400 hover:bg-emerald-900  text-emerald-400 px-2;">
-					<a href="#" target="_blank" rel="noreferrer">
+					<a onClick={handleClick} href="https://docs.google.com/document/d/1z5v6jSCvMw11KNfH1Jv5EAknBIWan9GAxmYeYBHRe74/edit?usp=sharing" smooth={true} duration={500}>
 						Resume
 					</a>
-				</button>
+				</li>
+				<li className="p-4 border-b border-slate-600 coolLists">
+					<a onClick={handleClick} href="about" smooth={true} duration={500}>
+						About
+					</a>
+				</li>
+				<li className="p-4 border-b border-slate-600 coolLists">
+					<a onClick={handleClick} href="contact" smooth={true} duration={500}>
+						Contact
+					</a>
+				</li>
+				<li className="p-4 border-b border-slate-600 coolLists">
+					<a onClick={handleClick} href="linkedIn" smooth={true} duration={500}>
+						LinkedIn
+					</a>
+				</li>
 			</ul>
 		</div>
     </StyledNavbar>
